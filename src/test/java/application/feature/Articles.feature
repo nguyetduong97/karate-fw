@@ -1,4 +1,3 @@
-@ignore
 Feature: Articles
 
   Background: Define URL
@@ -6,10 +5,15 @@ Feature: Articles
 
   Scenario: Create a new article
     Given path 'articles'
-    And request {"article": {"tagList": [],"title": "Articles-12343","description": "des","body": "body"}}
+    And request {"article": {"tagList": [],"title": "Articles-12353","description": "des","body": "body"}}
     When method Post
     Then status 200
-    And match response.article.title == 'Articles-12343'
+    And match response.article.title == 'Articles-12353'
+#    * def slugs = get response.article.slug
+#    * def favCount = get response.article.favoritesCount
+##    And print slugs
+##    And print favCount
+
 
   Scenario: Create and Delete a scenario
     Given path 'articles'
